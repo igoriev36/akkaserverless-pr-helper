@@ -23,7 +23,18 @@ message MyResult {
     int32 value = 1;
 }
 
+message PullRequestData {
+    string number = 1 [(akkaserverless.field).entity_key = true];
+}
+
 service MyServiceEntity {
+    rpc WebHook(PullRequestData) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+          post: "/webhook"
+          body: "*"
+        };
+    }
+
     option (akkaserverless.service).entity.type = ".persistence.MyEntity";
     rpc SetValue(SetValueCommand) returns (google.protobuf.Empty);
     rpc GetValue(GetValueCommand) returns (MyResult);

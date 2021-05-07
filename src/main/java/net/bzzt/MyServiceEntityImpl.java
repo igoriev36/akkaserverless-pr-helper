@@ -28,6 +28,12 @@ public class MyServiceEntityImpl extends MyServiceEntity {
     }
 
     @Override
+    public Empty webHook(MyEntity.PullRequestData command, CommandContext ctx) {
+        System.out.println("WebHook called for PR " + command.getNumber());
+        return Empty.getDefaultInstance();
+    }
+
+    @Override
     public Empty setValue(MyEntity.SetValueCommand command, CommandContext ctx) {
         throw ctx.fail("The command handler for `SetValue` is not implemented, yet");
     }
