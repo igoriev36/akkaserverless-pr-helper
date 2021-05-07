@@ -12,7 +12,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- TODO Update to your own Docker repository or Docker Hub scope -->
-    <akkasls.dockerImage>my-docker-repo/${project.artifactId}</akkasls.dockerImage>
+    <akkasls.dockerImage>raboof/${project.artifactId}</akkasls.dockerImage>
     <akkasls.dockerTag>${project.version}</akkasls.dockerTag>
     <akkasls.mainClass>net.bzzt.Main</akkasls.mainClass>
     <jdk.target>11</jdk.target>
