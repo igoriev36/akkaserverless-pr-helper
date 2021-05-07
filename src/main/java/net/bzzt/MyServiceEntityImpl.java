@@ -29,7 +29,7 @@ public class MyServiceEntityImpl extends MyServiceEntity {
 
     @Override
     public Empty webHook(MyEntity.PullRequestData command, CommandContext ctx) {
-        System.out.println("WebHook called for PR " + command.getNumber());
+        System.out.println("WebHook called for PR " + command.getNumber() + " in state " + command.getPullRequest().getState());
         return Empty.getDefaultInstance();
     }
 

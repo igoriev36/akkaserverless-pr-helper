@@ -23,8 +23,14 @@ message MyResult {
     int32 value = 1;
 }
 
+message PullRequest {
+    string state = 1;
+}
+
 message PullRequestData {
     string number = 1 [(akkaserverless.field).entity_key = true];
+    string action = 2;
+    PullRequest pull_request = 3;
 }
 
 service MyServiceEntity {
